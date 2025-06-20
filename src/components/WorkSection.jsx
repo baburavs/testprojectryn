@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './WorkSection.module.scss';
-import starIcon from '/src/assets/star.svg';
+// import starIcon from '/src/assets/star.svg';
 
 const WorkSection = () => {
   return (
@@ -8,7 +8,7 @@ const WorkSection = () => {
       {/* Header */}
       <div className={styles.header}>
         <div className={styles.titleRow}>
-          <img src={starIcon} alt="star icon" />
+          <img src="/src/assets/star.svg" alt="star icon" />
           <h2>Works</h2>
         </div>
         <a href="#" className={styles.viewAll}>View All</a>
