@@ -1,0 +1,83 @@
+@font-face {
+    font-family: 'General Sans';
+    src: url('/src/assets/fonts/GeneralSans-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: 'General Sans';
+    src: url('/src/assets/fonts/GeneralSans-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+  }
+  
+  .expertiseSection {
+    background-color: #050509;
+    color: #ffffff;
+    padding: 6rem 0;
+    font-family: 'General Sans', sans-serif;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .innerContainer {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 4rem;
+  }
+  
+  .titleRow {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+  
+    img {
+      width: 28px;
+      height: 28px;
+    }
+  
+    h2 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 4rem 6rem;
+  
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .card {
+    max-width: 500px;
+  
+    .heading {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+  
+    .square {
+      width: 8px;
+      height: 8px;
+      background-color: white;
+      flex-shrink: 0;
+    }
+  
+    p {
+      font-size: 1rem;
+      color: #b3b3b3;
+      line-height: 1.6;
+    }
+  }
+  

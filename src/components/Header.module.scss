@@ -1,0 +1,59 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 10%;
+    background-color: #010208;
+    color: white;
+  }
+  
+  .logo {
+    font-size: 2rem;
+    font-weight: 700;
+    span {
+      font-family: 'Syne', sans-serif;
+    }
+  }
+  
+  .navMenu ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+  
+    li {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: white;
+      cursor: pointer;
+      padding: 0.75rem 1.75rem;
+      border-radius: 2rem;
+      transition: all 0.3s ease;
+    }
+  
+    .active {
+      background-color: white;
+      color: black;
+    }
+  
+    li:hover:not(.active) {
+      color: #ccc;
+    }
+  }
+  
+  .hireButton {
+    padding: 0.75rem 2rem;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    border-radius: 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.3s ease;
+  
+    &:hover {
+      background-color: white;
+      color: black;
+    }
+  }
+  
