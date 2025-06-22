@@ -1,0 +1,56 @@
+.footerContainer {
+    padding-top: 112px;
+    padding-bottom: 32px;
+    padding-left: 10%;
+    padding-right: 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background: color(srgb 0.003 0.008 0.0295);
+  }
+  
+  .contactSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .title {
+    font-family: 'Syne', sans-serif;
+    font-size: 64px;
+    font-weight: 800;
+  }
+  
+  .email {
+    font-size: 1.125rem; // ~18px
+  }
+  
+  .bottomRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .socialLinks {
+    font-family: 'Syne', sans-serif;
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  
+    li {
+      cursor: pointer;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .bottomRow {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+  

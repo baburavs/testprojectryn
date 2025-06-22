@@ -1,0 +1,45 @@
+.scrollWrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: #010208;
+  }
+  
+  .scroller {
+    display: flex;
+    width: max-content;
+    gap: 40px;
+    animation: scroll-right 20s linear infinite;
+  }
+  
+  .iconGroup {
+    display: flex;
+    gap: 40px;
+  }
+  
+  .icon {
+    width: fit-content;
+    color: transparent;
+  }
+  
+  // Right-to-left scroll animation
+  @keyframes scroll-right {
+    0% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  // Optional: Pause on hover
+  .scrollWrapper:hover .scroller {
+    animation-play-state: paused;
+  }
+  .icon {
+    border: none;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+  }

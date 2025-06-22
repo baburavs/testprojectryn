@@ -1,93 +1,93 @@
-import React, { useState } from 'react';
-import styles from './TestimonialSection.module.scss';
+import React, { useRef } from "react";
+import Slider from "react-slick";
+import styles from "./TestimonialSection.module.scss";
+
+const testimonials = [
+  {
+    name: "Floyd Miles",
+    company: "eBay",
+    quote:
+      "Synergys resume builder is fantastic. It helped me create a professional resume that stood out to employers.",
+    avatar: "src/assets/man.png",
+    quoteIcon: "src/assets/quote.svg",
+  },
+  {
+    name: "Jenny Wilson",
+    company: "Google",
+    quote:
+      "The tool is intuitive and powerful. My resume finally looks modern and professional.",
+    avatar: "src/assets/man.png",
+    quoteIcon: "src/assets/quote.svg",
+  },
+];
 
 const TestimonialSection = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const sliderRef = useRef();
 
-  const handleNext = () => {
-    setCurrentIndex(1);
-  };
-
-  const handlePrev = () => {
-    setCurrentIndex(0);
+  const settings = {
+    dots: false,
+    infinite: false,
+    arrows: false, // disable default arrows
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    speed: 500,
   };
 
   return (
-    <section className={styles.testimonialSection}>
-      {/* Header */}
-      <div className={styles.headingRow}>
-        <img src="/src/assets/star.svg" alt="star icon" />
-        <h2>What they say</h2>
-      </div>
+    <div className={styles.reviewContainer}>
+      <h2 className={styles.heading}>
+        <img src="src/assets/Star.svg" alt="icon" />
+        What they say
+      </h2>
 
-      {/* Slider */}
-      <div className={styles.sliderWrapper}>
-        <div
-          className={styles.sliderTrack}
-          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-        >
-          {/* Slide 1 */}
-          <div className={styles.testimonialContent}>
-            <div className={styles.left}>
-              <div className={styles.profile}>
-                <img src="/src/assets/man.png" alt="man" className={styles.avatar} />
-                <div className={styles.profileInfo}>
-                  <h3>Floyd Miles</h3>
-                  <p>eBay</p>
+      <Slider ref={sliderRef} {...settings}>
+        {testimonials.map((review, index) => (
+          <div className={styles.slide} key={index}>
+            <div className={styles.content}>
+              <div className={styles.left}>
+                <img
+                  src={review.avatar}
+                  alt={review.name}
+                  className={styles.avatar}
+                />
+                <div>
+                  <h5>{review.name}</h5>
+                  <p>{review.company}</p>
                 </div>
               </div>
-            </div>
-            <div className={styles.right}>
-              <div className={styles.quoteWrapper}>
-                <img src="/src/assets/quote.svg" alt="quote" className={styles.quoteIcon} />
-                <p className={styles.testimonialText}>
-                  <span className={styles.emphasis}>Synergy’s</span> resume builder is fantastic.
-                  It helped me create a professional resume that stood out to employers.
-                </p>
+              <div className={styles.right}>
+                <img
+                  src={review.quoteIcon}
+                  alt="quote"
+                  className={styles.quoteIcon}
+                />
+                <p className={styles.quote}>{review.quote}</p>
               </div>
             </div>
           </div>
+        ))}
+      </Slider>
 
-          {/* Slide 2 */}
-          <div className={styles.testimonialContent}>
-            <div className={styles.left}>
-              <div className={styles.profile}>
-                <img src="/src/assets/man.png" alt="man" className={styles.avatar} />
-                <div className={styles.profileInfo}>
-                  <h3>Floyd Miles</h3>
-                  <p>eBay</p>
-                </div>
-              </div>
-            </div>
-            <div className={styles.right}>
-              <div className={styles.quoteWrapper}>
-                <img src="/src/assets/quote.svg" alt="quote" className={styles.quoteIcon} />
-                <p className={styles.testimonialText}>
-                  <span className={styles.emphasis}>Synergy’s</span> resume builder is fantastic.
-                  It helped me create a professional resume that stood out to employers.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Navigation */}
-      <div className={styles.navigation}>
+      {/* Custom navigation arrows BELOW the slider */}
+      <div className={styles.navButtons}>
         <button
-          onClick={handlePrev}
-          className={currentIndex === 0 ? styles.navButtonActive : styles.navButton}
+          className={styles.sliderBtn}
+          onClick={() => sliderRef.current.slickPrev()}
         >
-          ←
+          <img
+            src="src/assets/arrow.svg"
+            alt="Previous"
+            className={styles.prevIcon}
+          />
         </button>
         <button
-          onClick={handleNext}
-          className={currentIndex === 1 ? styles.navButtonActive : styles.navButton}
+          className={styles.sliderBtn}
+          onClick={() => sliderRef.current.slickNext()}
         >
-          →
+          <img src="src/assets/arrow.svg" alt="Next" />
         </button>
       </div>
-    </section>
+    </div>
   );
 };
 

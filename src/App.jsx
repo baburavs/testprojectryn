@@ -11,6 +11,10 @@ import Footer from './components/Footer'
 import WorkSection from './components/WorkSection'
 import BlogSection from './components/BlogSection'
 import TestimonialSection from './components/TestimonialSection'
+import ScrollBanner from "./components/ScrollBanner";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 function App() {
   return (
     <div className="App">
@@ -24,6 +28,7 @@ function App() {
       <BlogSection/>
      <TestimonialSection/>
       <FAQ />
+      <ScrollBanner />
       <Footer />
     </div>
   )
