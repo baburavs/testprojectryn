@@ -69,7 +69,7 @@ const TestimonialSection = () => {
       </Slider>
 
       {/* Custom navigation arrows BELOW the slider */}
-      <div className={styles.navButtons}>
+      {/* <div className={styles.navButtons}>
         <button
           className={styles.sliderBtn}
           onClick={() => sliderRef.current.slickPrev()}
@@ -86,7 +86,7 @@ const TestimonialSection = () => {
         >
           <img src="src/assets/arrow.svg" alt="Next" />
         </button>
-      </div>
+      </div> */}
     </div>
   );
 };
