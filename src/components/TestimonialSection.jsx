@@ -12,10 +12,10 @@ const testimonials = [
     quoteIcon: "src/assets/quote.svg",
   },
   {
-    name: "Jenny Wilson",
-    company: "Google",
+    name: "Floyd Miles",
+    company: "eBay",
     quote:
-      "The tool is intuitive and powerful. My resume finally looks modern and professional.",
+      "Synergys resume builder is fantastic. It helped me create a professional resume that stood out to employers.",
     avatar: "src/assets/man.png",
     quoteIcon: "src/assets/quote.svg",
   },
